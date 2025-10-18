@@ -8,15 +8,17 @@
   overflow-x: hidden;
 }
 
-/* Floating emoji animation */
-.emoji-float {
+/* Floating image animation */
+.hero-float-img {
   position: absolute;
   top: 80px;
   right: 10%;
-  font-size: 4rem;
+  width: 120px;
+  height: 120px;
   animation: float 6s ease-in-out infinite;
-  opacity: 0.15;
+  opacity: 0.2;
   pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 @keyframes float {
@@ -183,6 +185,13 @@
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
 }
 
+.stat-icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
 .stat-value {
   font-size: 2rem;
   font-weight: 800;
@@ -249,8 +258,19 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
+.module-icon-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
 .module-card:hover .module-icon {
   transform: scale(1.15) rotate(10deg);
+}
+
+.module-card:hover .module-icon-img {
+  transform: scale(1.1);
 }
 
 .module-title {
@@ -331,6 +351,19 @@
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
 }
 
+.info-icon-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-icon-img {
+  transform: scale(1.1);
+}
+
 .info-card h3 {
   font-size: 1.25rem;
   margin-bottom: 12px;
@@ -359,16 +392,27 @@
 }
 
 .info-callout::after {
-  content: '💡';
+  content: '';
   position: absolute;
   right: 20px;
   top: 20px;
-  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  background: url('https://cdn-icons-png.flaticon.com/512/2541/2541988.png') no-repeat center;
+  background-size: contain;
   opacity: 0.15;
 }
 
 .callout-emoji {
   font-size: 2.5rem;
+  margin-bottom: 12px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.callout-icon-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
   margin-bottom: 12px;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
 }
