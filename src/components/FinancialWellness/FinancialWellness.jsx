@@ -23,7 +23,7 @@ const FinancialWellness = () => {
       title: 'Financial IQ Challenge',
       icon: 'fa-solid fa-circle-question',
       description: 'Think you know money? Let\'s find out with some quick questions!',
-      color: '#4A90E2',
+      color: '#8B1538',
       emoji: '🧠'
     },
     {
@@ -31,21 +31,21 @@ const FinancialWellness = () => {
       title: 'Life Scenarios',
       icon: 'fa-solid fa-people-group',
       description: 'Real situations, real choices. What would you do?',
-      color: '#7B68EE'
+      color: '#A52A4A'
     },
     {
       id: 'budget',
       title: 'Budget Builder',
       icon: 'fa-solid fa-calculator',
       description: 'Time to build your first budget (or improve your current one!)',
-      color: '#50C878'
+      color: '#C44E6A'
     },
     {
       id: 'maze',
       title: 'Maze Navigator',
       icon: 'fa-solid fa-map-location-dot',
       description: 'Navigate life\'s financial maze from college to retirement!',
-      color: '#FF6B6B'
+      color: '#8B1538'
     }
   ];
 

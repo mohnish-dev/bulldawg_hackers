@@ -1,7 +1,7 @@
 /* Financial Wellness Main Container */
 .financial-wellness-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background: linear-gradient(135deg, #8B1538 0%, #A52A4A 25%, #C44E6A 50%, #8B1538 75%, #6B0F28 100%);
   padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   position: relative;
@@ -54,13 +54,13 @@
 }
 
 .level-badge {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #8B1538, #A52A4A);
   color: white;
   padding: 10px 18px;
   border-radius: 24px;
   font-weight: 700;
   white-space: nowrap;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 10px rgba(139, 21, 56, 0.4);
   letter-spacing: 0.3px;
   font-size: 0.95rem;
 }
@@ -68,18 +68,18 @@
 .level-progress {
   flex: 1;
   height: 12px;
-  background: #e5e7eb;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .level-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #10b981, #34d399);
+  background: linear-gradient(90deg, #D4AF37, #FFD700);
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 12px;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
 }
 
 .level-next {
@@ -422,13 +422,13 @@
 }
 
 .info-callout {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);
-  border-left: 6px solid #f59e0b;
+  background: linear-gradient(135deg, #FFE5E5 0%, #FFD1D1 50%, #FFC1C1 100%);
+  border-left: 6px solid #8B1538;
   border-radius: 20px;
   padding: 32px 35px;
   margin-top: 35px;
   text-align: left;
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 8px 24px rgba(139, 21, 56, 0.25);
   animation: fadeInUp 0.8s ease 0.6s both;
   position: relative;
   overflow: hidden;
@@ -2099,7 +2099,7 @@
 .maze-grid {
   max-width: 600px;
   margin: 0 auto 20px;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #6B0F28 0%, #4A0A1C 100%);
   border-radius: 16px;
   padding: 15px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -2127,8 +2127,8 @@
 }
 
 .maze-path.visited {
-  background: linear-gradient(135deg, #a8e6cf 0%, #7ed7c1 100%);
-  box-shadow: 0 0 15px rgba(126, 215, 193, 0.5);
+  background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
   animation: pathGlow 0.5s ease;
 }
 
@@ -2139,14 +2139,14 @@
 }
 
 .maze-wall {
-  background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
-  border: 2px solid #34495e;
+  background: linear-gradient(135deg, #4A0A1C 0%, #2A0510 100%);
+  border: 2px solid #6B0F28;
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .maze-decision {
-  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-  box-shadow: 0 0 20px rgba(253, 203, 110, 0.6);
+  background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
   animation: decisionPulse 2s infinite;
 }
 
@@ -2156,8 +2156,8 @@
 }
 
 @keyframes decisionPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(253, 203, 110, 0.6); }
-  50% { box-shadow: 0 0 30px rgba(253, 203, 110, 0.9); }
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+  50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.9); }
 }
 
 .maze-event {
@@ -2177,18 +2177,18 @@
 }
 
 .maze-goal {
-  background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
-  box-shadow: 0 0 30px rgba(0, 184, 148, 0.8);
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.9);
   animation: goalShine 1.5s infinite;
 }
 
 @keyframes goalShine {
   0%, 100% { 
-    box-shadow: 0 0 30px rgba(0, 184, 148, 0.8);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.9);
     transform: scale(1);
   }
   50% { 
-    box-shadow: 0 0 45px rgba(0, 184, 148, 1);
+    box-shadow: 0 0 45px rgba(255, 215, 0, 1);
     transform: scale(1.05);
   }
 }
