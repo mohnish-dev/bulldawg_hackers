@@ -8,13 +8,13 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleEmployeeLogin = () => {
-    // Redirect to employee portal
-    window.location.href = 'http://127.0.0.1:5000/';
+    // Redirect to employee portal in new tab
+    window.open('http://127.0.0.1:5000/', '_blank');
   };
 
   const handleHRLogin = () => {
-    // Redirect to HR dashboard
-    window.location.href = 'http://localhost:3000/';
+    // Redirect to HR dashboard in new tab
+    window.open('http://localhost:3000/', '_blank');
   };
 
   const services = [
