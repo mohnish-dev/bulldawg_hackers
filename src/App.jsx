@@ -4,8 +4,10 @@ import FinancialWellness from './components/FinancialWellness/FinancialWellness'
 import './App.css'
 
 function App() {
+  const basename = import.meta.env.PROD ? '/bulldawg_hackers' : '/';
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="app-container">
         <Routes>
           <Route path="/" element={<HomePage />} />
