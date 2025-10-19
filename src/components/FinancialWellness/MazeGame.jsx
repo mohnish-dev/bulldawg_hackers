@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { quizQuestions } from '../../data/quizData';
 
 const MazeGame = ({ onBack, onComplete }) => {
   const [playerPos, setPlayerPos] = useState({ x: 0, y: 0 });
@@ -9,18 +10,19 @@ const MazeGame = ({ onBack, onComplete }) => {
   const [gameStatus, setGameStatus] = useState('playing'); // playing, won, lost
   const [age, setAge] = useState(22); // Starting age
   const [playerDecisions, setPlayerDecisions] = useState([]);
+  const [answeredQuizTiles, setAnsweredQuizTiles] = useState(new Set());
 
-  // 10x10 Maze grid - 0: path, 1: wall, 2: decision point, 3: event, 4: goal
+  // 10x10 Maze grid - 0: path, 1: wall, 2: decision point, 3: event, 4: goal, 5: quiz question
   const maze = [
-    [0, 0, 2, 1, 0, 0, 3, 1, 0, 0],
-    [1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 2, 1, 5, 0, 3, 1, 0, 0],
+    [1, 0, 1, 1, 0, 1, 0, 1, 5, 1],
+    [0, 5, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 1, 1, 1, 2, 1, 1, 1, 1, 0],
-    [0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 3, 0, 5, 0, 0, 0, 0, 0],
     [1, 0, 1, 1, 0, 1, 2, 1, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
+    [0, 5, 0, 0, 0, 0, 0, 0, 5, 3],
     [0, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-    [0, 0, 2, 0, 0, 3, 0, 0, 0, 0],
+    [0, 0, 2, 0, 5, 3, 0, 0, 0, 0],
     [1, 0, 1, 1, 0, 1, 1, 1, 0, 4],
   ];
 
@@ -229,6 +231,15 @@ const MazeGame = ({ onBack, onComplete }) => {
     return randomDecision;
   };
 
+  const getRandomQuizQuestion = () => {
+    const randomQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
+    return {
+      ...randomQuestion,
+      type: 'quiz',
+      selectedAnswer: null
+    };
+  };
+
   const handleKeyPress = useCallback((e) => {
     if (currentEvent || gameStatus !== 'playing') return;
 
@@ -256,6 +267,12 @@ const MazeGame = ({ onBack, onComplete }) => {
         } else if (cellType === 3) {
           const event = getRandomEvent();
           setCurrentEvent({ type: 'event', data: event });
+        } else if (cellType === 5) {
+          const tileKey = `${playerPos.x}-${playerPos.y}`;
+          if (!answeredQuizTiles.has(tileKey)) {
+            const quizQuestion = getRandomQuizQuestion();
+            setCurrentEvent({ type: 'quiz', data: quizQuestion });
+          }
         }
         return;
       default:
@@ -277,6 +294,13 @@ const MazeGame = ({ onBack, onComplete }) => {
       if (maze[newY][newX] === 3 && !visitedCells.has(`${newX}-${newY}`)) {
         const event = getRandomEvent();
         setCurrentEvent({ type: 'event', data: event });
+      }
+
+      // Trigger quiz questions automatically
+      const tileKey = `${newX}-${newY}`;
+      if (maze[newY][newX] === 5 && !answeredQuizTiles.has(tileKey)) {
+        const quizQuestion = getRandomQuizQuestion();
+        setCurrentEvent({ type: 'quiz', data: quizQuestion });
       }
     }
   }, [playerPos, currentEvent, gameStatus, maze, visitedCells, score, money, onComplete]);
@@ -313,14 +337,52 @@ const MazeGame = ({ onBack, onComplete }) => {
     }
   };
 
+  const handleQuizAnswer = (answerIndex) => {
+    const tileKey = `${playerPos.x}-${playerPos.y}`;
+    const isCorrect = answerIndex === currentEvent.data.correctAnswer;
+    
+    // Update quiz data with selected answer
+    setCurrentEvent({
+      ...currentEvent,
+      data: {
+        ...currentEvent.data,
+        selectedAnswer: answerIndex,
+        isCorrect: isCorrect
+      }
+    });
+
+    // Mark this tile as answered
+    setAnsweredQuizTiles(prev => new Set([...prev, tileKey]));
+
+    // Award or deduct money based on answer
+    const moneyChange = isCorrect ? 5000 : -2000;
+    const newMoney = money + moneyChange;
+    setMoney(newMoney);
+    
+    // Award points for correct answer
+    if (isCorrect) {
+      setScore(score + currentEvent.data.points);
+    }
+
+    if (newMoney <= 0) {
+      setGameStatus('lost');
+    }
+  };
+
+  const handleQuizClose = () => {
+    setCurrentEvent(null);
+  };
+
   const getCellClass = (x, y) => {
     const cellType = maze[y][x];
     const isVisited = visitedCells.has(`${x}-${y}`);
+    const isAnswered = answeredQuizTiles.has(`${x}-${y}`);
     
     if (cellType === 1) return 'maze-wall';
     if (cellType === 4) return 'maze-goal';
     if (cellType === 2) return isVisited ? 'maze-decision visited' : 'maze-decision';
     if (cellType === 3) return isVisited ? 'maze-event visited' : 'maze-event';
+    if (cellType === 5) return isAnswered ? 'maze-quiz answered' : 'maze-quiz';
     return isVisited ? 'maze-path visited' : 'maze-path';
   };
 
@@ -387,6 +449,11 @@ const MazeGame = ({ onBack, onComplete }) => {
                       <i className="fa-solid fa-burst"></i>
                     </div>
                   )}
+                  {cell === 5 && !answeredQuizTiles.has(`${x}-${y}`) && (
+                    <div className="quiz-icon">
+                      <i className="fa-solid fa-circle-question"></i>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -435,6 +502,64 @@ const MazeGame = ({ onBack, onComplete }) => {
                 </button>
               ))}
             </div>
+          </div>
+        </div>
+      )}
+
+      {currentEvent && currentEvent.type === 'quiz' && (
+        <div className="modal-overlay">
+          <div className="quiz-modal">
+            <div className="quiz-header">
+              <span className="quiz-category">{currentEvent.data.category}</span>
+              <span className="quiz-points">
+                <i className="fa-solid fa-coins"></i> 
+                {currentEvent.data.selectedAnswer !== null ? 
+                  (currentEvent.data.isCorrect ? '+$5,000' : '-$2,000') : 
+                  'Answer for $5,000'}
+              </span>
+            </div>
+            <h3 className="quiz-question">{currentEvent.data.question}</h3>
+            <div className="quiz-answers">
+              {currentEvent.data.answers.map((answer, index) => {
+                const isSelected = currentEvent.data.selectedAnswer === index;
+                const isCorrect = index === currentEvent.data.correctAnswer;
+                const showResult = currentEvent.data.selectedAnswer !== null;
+                
+                let buttonClass = 'quiz-answer-btn';
+                if (showResult) {
+                  if (isSelected && isCorrect) buttonClass += ' correct';
+                  else if (isSelected && !isCorrect) buttonClass += ' incorrect';
+                  else if (isCorrect) buttonClass += ' correct-answer';
+                }
+                
+                return (
+                  <button
+                    key={index}
+                    className={buttonClass}
+                    onClick={() => handleQuizAnswer(index)}
+                    disabled={currentEvent.data.selectedAnswer !== null}
+                  >
+                    <span className="answer-letter">{String.fromCharCode(65 + index)}</span>
+                    <span className="answer-text">{answer}</span>
+                    {showResult && isCorrect && <i className="fa-solid fa-check"></i>}
+                    {showResult && isSelected && !isCorrect && <i className="fa-solid fa-xmark"></i>}
+                  </button>
+                );
+              })}
+            </div>
+            {currentEvent.data.selectedAnswer !== null && (
+              <div className={`quiz-result ${currentEvent.data.isCorrect ? 'correct' : 'incorrect'}`}>
+                <p className="result-message">
+                  {currentEvent.data.isCorrect ? 
+                    '✅ Correct! You earned $5,000!' : 
+                    '❌ Incorrect! You lost $2,000.'}
+                </p>
+                <p className="explanation">{currentEvent.data.explanation}</p>
+                <button className="btn btn-primary" onClick={handleQuizClose}>
+                  Continue <i className="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

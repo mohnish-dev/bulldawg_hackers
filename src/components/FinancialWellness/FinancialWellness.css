@@ -2197,6 +2197,28 @@
   50% { box-shadow: 0 0 30px rgba(116, 185, 255, 0.9); }
 }
 
+.maze-quiz {
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  box-shadow: 0 0 20px rgba(162, 155, 254, 0.6);
+  animation: quizPulse 2s infinite;
+}
+
+.maze-quiz.answered {
+  background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+  animation: none;
+}
+
+@keyframes quizPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(162, 155, 254, 0.6); }
+  50% { box-shadow: 0 0 30px rgba(162, 155, 254, 0.9); }
+}
+
+.quiz-icon {
+  font-size: 1.2rem;
+  color: white;
+  animation: bounceIcon 1.5s infinite;
+}
+
 .maze-goal {
   background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
   box-shadow: 0 0 30px rgba(255, 107, 53, 0.9);
@@ -2444,6 +2466,176 @@
 
 .risk-badge.low {
   background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+}
+
+/* Quiz Modal */
+.quiz-modal {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 700px;
+  animation: modalSlideIn 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.quiz-category {
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.quiz-points {
+  color: #FF6B35;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quiz-question {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.quiz-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quiz-answer-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 3px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.05rem;
+  text-align: left;
+}
+
+.quiz-answer-btn:hover:not(:disabled) {
+  transform: translateX(8px);
+  border-color: #a29bfe;
+  box-shadow: 0 6px 20px rgba(162, 155, 254, 0.3);
+}
+
+.quiz-answer-btn:disabled {
+  cursor: not-allowed;
+}
+
+.quiz-answer-btn.correct {
+  border-color: #27ae60;
+  background: linear-gradient(135deg, #e5ffe5 0%, #ccffcc 100%);
+}
+
+.quiz-answer-btn.incorrect {
+  border-color: #e74c3c;
+  background: linear-gradient(135deg, #ffe5e5 0%, #ffcccc 100%);
+}
+
+.quiz-answer-btn.correct-answer {
+  border-color: #27ae60;
+  background: linear-gradient(135deg, #e5ffe5 0%, #d4f4dd 100%);
+}
+
+.answer-letter {
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.quiz-answer-btn.correct .answer-letter {
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+}
+
+.quiz-answer-btn.incorrect .answer-letter {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.answer-text {
+  flex: 1;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.quiz-answer-btn i {
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+
+.quiz-answer-btn.correct i {
+  color: #27ae60;
+}
+
+.quiz-answer-btn.incorrect i {
+  color: #e74c3c;
+}
+
+.quiz-result {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 16px;
+  animation: fadeIn 0.5s ease;
+}
+
+.quiz-result.correct {
+  background: linear-gradient(135deg, #e5ffe5 0%, #ccffcc 100%);
+  border: 2px solid #27ae60;
+}
+
+.quiz-result.incorrect {
+  background: linear-gradient(135deg, #ffe5e5 0%, #ffcccc 100%);
+  border: 2px solid #e74c3c;
+}
+
+.result-message {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.quiz-result.correct .result-message {
+  color: #27ae60;
+}
+
+.quiz-result.incorrect .result-message {
+  color: #e74c3c;
+}
+
+.explanation {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
 }
 
 .game-over-modal {
