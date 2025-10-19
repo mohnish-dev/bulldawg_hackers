@@ -7,9 +7,9 @@
 
 /* Header/Navbar */
 .homepage-header {
-  background: linear-gradient(135deg, #6b0f1a 0%, #4a0a11 100%);
+  background: #ffffff;
   padding: 20px 0;
-  box-shadow: 0 4px 12px rgba(107, 15, 26, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -28,6 +28,18 @@
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
 }
 
 .logo-image {

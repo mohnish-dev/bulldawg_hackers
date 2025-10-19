@@ -55,7 +55,9 @@ const HomePage = () => {
       <header className="homepage-header">
         <div className="header-content">
           <div className="logo-section">
-            <img src="/images/Cover_pic.png" alt="Coverage Compass" className="logo-image" />
+            <a href="/" className="logo-link">
+              <img src="/images/Cover_pic.png" alt="Coverage Compass" className="logo-image" />
+            </a>
           </div>
           <button className="btn-get-started" onClick={() => setShowLoginModal(true)}>
             Get Started <i className="fa-solid fa-arrow-right"></i>
