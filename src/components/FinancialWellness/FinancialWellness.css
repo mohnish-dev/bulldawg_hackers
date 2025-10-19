@@ -892,8 +892,9 @@
 
 .scenario-title {
   font-size: 1.8rem;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .scenario-description {
@@ -908,8 +909,9 @@
 
 .choices-container h4 {
   font-size: 1.2rem;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .choice-button {
@@ -1177,9 +1179,10 @@
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 10px;
   font-size: 1.1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .label-icon {
@@ -1222,9 +1225,10 @@
 
 .expenses-section h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 20px;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .expenses-grid {
