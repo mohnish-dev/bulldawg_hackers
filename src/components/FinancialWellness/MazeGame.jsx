@@ -459,11 +459,6 @@ const MazeGame = ({ onBack, onComplete }) => {
             </div>
           ))}
         </div>
-
-        <div className="maze-controls">
-          <p><i className="fa-solid fa-keyboard"></i> Use Arrow Keys to move</p>
-          <p><i className="fa-solid fa-hand-pointer"></i> Press Space at decision points</p>
-        </div>
       </div>
 
       {currentEvent && currentEvent.type === 'event' && (
