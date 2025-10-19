@@ -18,6 +18,13 @@ const FinancialWellness = () => {
 
   const modules = [
     {
+      id: 'maze',
+      title: 'Maze Navigator',
+      icon: 'fa-solid fa-map-location-dot',
+      description: 'Navigate life\'s financial maze from college to retirement! Now with quiz questions!',
+      color: '#8B1538'
+    },
+    {
       id: 'scenario',
       title: 'Life Scenarios',
       icon: 'fa-solid fa-people-group',
@@ -30,13 +37,6 @@ const FinancialWellness = () => {
       icon: 'fa-solid fa-calculator',
       description: 'Time to build your first budget (or improve your current one!)',
       color: '#C44E6A'
-    },
-    {
-      id: 'maze',
-      title: 'Maze Navigator',
-      icon: 'fa-solid fa-map-location-dot',
-      description: 'Navigate life\'s financial maze from college to retirement! Now with quiz questions!',
-      color: '#8B1538'
     }
   ];
 
