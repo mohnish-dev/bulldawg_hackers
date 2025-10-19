@@ -15,10 +15,10 @@
   right: 10%;
   font-size: 6rem;
   animation: float 6s ease-in-out infinite;
-  opacity: 0.15;
+  opacity: 0.8;
   pointer-events: none;
-  color: #8B1538;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.05));
+  color: #DAA520;
+  filter: drop-shadow(0 6px 12px rgba(218, 165, 32, 0.6)) brightness(1.2);
 }
 
 @keyframes float {
