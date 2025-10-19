@@ -1,7 +1,7 @@
 /* Financial Wellness Main Container */
 .financial-wellness-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #8B1538 0%, #A52A4A 25%, #C44E6A 50%, #8B1538 75%, #6B0F28 100%);
+  background: #ffffff;
   padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   position: relative;
@@ -15,10 +15,10 @@
   right: 10%;
   font-size: 6rem;
   animation: float 6s ease-in-out infinite;
-  opacity: 0.2;
+  opacity: 0.15;
   pointer-events: none;
-  color: rgba(255, 255, 255, 0.8);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  color: #8B1538;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.05));
 }
 
 @keyframes float {
@@ -30,13 +30,12 @@
 
 /* Progress Tracker */
 .progress-tracker {
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, #8B1538 0%, #A52A4A 100%);
   border-radius: 16px;
   padding: 18px 24px;
   margin-bottom: 20px;
-  box-shadow: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 12px rgba(139, 21, 56, 0.2);
+  border: 1px solid rgba(139, 21, 56, 0.3);
 }
 
 .tracker-content {
@@ -122,14 +121,14 @@
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #8B1538;
   line-height: 1.2;
   letter-spacing: -0.5px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
 }
 
 .gradient-text {
-  background: linear-gradient(120deg, #ffffff 0%, #f0f9ff 40%, #e0f2fe 100%);
+  background: linear-gradient(120deg, #8B1538 0%, #A52A4A 40%, #C44E6A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -139,11 +138,10 @@
 
 .subtitle {
   font-size: 1.25rem;
-  color: #ffffff;
+  color: #555555;
   margin-bottom: 30px;
   font-weight: 400;
   letter-spacing: 0.3px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
 }
 
 .stats-bar {
@@ -155,16 +153,15 @@
 }
 
 .stat-item {
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, #8B1538 0%, #A52A4A 100%);
   padding: 22px 32px;
   border-radius: 18px;
   display: flex;
   align-items: center;
   gap: 15px;
-  box-shadow: none;
+  box-shadow: 0 4px 12px rgba(139, 21, 56, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 21, 56, 0.3);
 }
 
 .stat-item-1 {
@@ -229,18 +226,17 @@
 }
 
 .module-card {
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(139, 21, 56, 0.95) 0%, rgba(165, 42, 74, 0.95) 100%);
   border-radius: 24px;
   padding: 35px 30px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border-top: 6px solid;
-  box-shadow: none;
+  box-shadow: 0 4px 12px rgba(139, 21, 56, 0.2);
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 21, 56, 0.3);
 }
 
 .module-card::before {
@@ -256,7 +252,7 @@
 
 .module-card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 40px rgba(139, 21, 56, 0.35);
 }
 
 .module-icon {
@@ -496,16 +492,15 @@
 .budget-container {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(139, 21, 56, 0.95) 0%, rgba(165, 42, 74, 0.95) 100%);
   border-radius: 20px;
   padding: 30px;
   min-height: 80vh;
   animation: fadeIn 0.5s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 12px rgba(139, 21, 56, 0.2);
+  border: 1px solid rgba(139, 21, 56, 0.3);
 }
 
 /* Header Styles */
@@ -2029,15 +2024,14 @@
 
 .maze-header h2 {
   font-size: 2.5rem;
-  color: #ffffff;
+  color: #8B1538;
   margin-bottom: 10px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
 }
 
 .maze-subtitle {
-  color: #ffffff;
+  color: #555555;
   font-size: 1.1rem;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
 }
 
 .maze-stats {
@@ -2049,21 +2043,21 @@
 }
 
 .stat-box {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #8B1538 0%, #A52A4A 100%);
+  border: 2px solid rgba(139, 21, 56, 0.4);
   border-radius: 16px;
   padding: 15px 25px;
   display: flex;
   align-items: center;
   gap: 15px;
-  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 12px rgba(139, 21, 56, 0.2);
   transition: all 0.3s ease;
 }
 
 .stat-box:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #A52A4A 0%, #C44E6A 100%);
+  border-color: rgba(196, 78, 106, 0.5);
 }
 
 .stat-box i {
