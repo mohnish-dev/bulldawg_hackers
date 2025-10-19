@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './FinancialWellness.css';
-import QuizGame from './QuizGame';
 import ScenarioGame from './ScenarioGame';
 import BudgetSimulator from './BudgetSimulator';
 import MazeGame from './MazeGame';
@@ -19,14 +18,6 @@ const FinancialWellness = () => {
 
   const modules = [
     {
-      id: 'quiz',
-      title: 'Financial IQ Challenge',
-      icon: 'fa-solid fa-circle-question',
-      description: 'Think you know money? Let\'s find out with some quick questions!',
-      color: '#8B1538',
-      emoji: '🧠'
-    },
-    {
       id: 'scenario',
       title: 'Life Scenarios',
       icon: 'fa-solid fa-people-group',
@@ -44,7 +35,7 @@ const FinancialWellness = () => {
       id: 'maze',
       title: 'Maze Navigator',
       icon: 'fa-solid fa-map-location-dot',
-      description: 'Navigate life\'s financial maze from college to retirement!',
+      description: 'Navigate life\'s financial maze from college to retirement! Now with quiz questions!',
       color: '#8B1538'
     }
   ];
@@ -171,8 +162,6 @@ const FinancialWellness = () => {
 
   const renderModule = () => {
     switch(currentModule) {
-      case 'quiz':
-        return <QuizGame onComplete={updateProgress} onBack={() => setCurrentModule('home')} />;
       case 'scenario':
         return <ScenarioGame onComplete={updateProgress} onBack={() => setCurrentModule('home')} />;
       case 'budget':
