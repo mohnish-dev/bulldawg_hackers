@@ -1293,8 +1293,9 @@
 
 .results-header h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: white;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .rating-display {
@@ -1307,10 +1308,13 @@
   font-weight: 600;
   margin: 20px 0;
   border: 2px solid;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .rating-icon {
   font-size: 1.8rem;
+  color: #FF6B35;
 }
 
 .budget-summary {
@@ -1371,9 +1375,10 @@
 
 .expense-breakdown h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: white;
   margin-bottom: 25px;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .breakdown-chart {
