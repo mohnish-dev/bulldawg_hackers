@@ -29,6 +29,11 @@ const ScenarioGame = ({ onComplete, onBack }) => {
       points: points,
       rating: choice.rating
     }]);
+    
+    // If this is the last scenario, pass the correct total to onComplete
+    if (currentScenario === scenarios.length - 1) {
+      // We'll call onComplete when showing summary with the correct total
+    }
   };
 
   const handleNext = () => {
@@ -37,7 +42,11 @@ const ScenarioGame = ({ onComplete, onBack }) => {
       setSelectedChoice(null);
     } else {
       setShowSummary(true);
-      onComplete('scenario', totalPoints);
+      // The totalPoints state has been updated in handleSubmit, but we need to wait for the state update
+      // So we recalculate the total from completedScenarios
+      const finalTotal = completedScenarios.reduce((sum, item) => sum + item.points, 0) + 
+                         scenario.choices[selectedChoice].points;
+      onComplete('scenario', finalTotal);
     }
   };
 

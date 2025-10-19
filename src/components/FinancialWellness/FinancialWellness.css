@@ -1048,8 +1048,9 @@
 
 .summary-header h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .summary-score {
@@ -1059,28 +1060,31 @@
 .score-display {
   font-size: 3rem;
   font-weight: 700;
-  color: #667eea;
+  color: #FF6B35;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .score-value {
-  color: #667eea;
+  color: #FF6B35;
 }
 
 .score-max {
-  color: #999;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
 }
 
 .score-percentage {
   font-size: 1.2rem;
-  color: #666;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .summary-message {
   font-size: 1.3rem;
-  color: #666;
+  color: #ffffff;
   margin: 20px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .scenarios-review {
@@ -1091,8 +1095,9 @@
 .scenarios-review h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #ffffff;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .scenario-review-card {
