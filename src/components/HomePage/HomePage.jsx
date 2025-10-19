@@ -13,8 +13,8 @@ const HomePage = () => {
   };
 
   const handleHRLogin = () => {
-    // Navigate to HR dashboard (can be implemented later)
-    alert('HR Dashboard - Coming Soon!');
+    // Redirect to HR dashboard
+    window.location.href = 'http://localhost:3000/';
   };
 
   const services = [
