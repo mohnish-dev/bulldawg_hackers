@@ -30,6 +30,12 @@
   gap: 15px;
 }
 
+.logo-image {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
 .logo-icon {
   width: 60px;
   height: 60px;
@@ -418,6 +424,12 @@
   justify-content: center;
   gap: 12px;
   margin-bottom: 15px;
+}
+
+.footer-logo-image {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer-logo i {

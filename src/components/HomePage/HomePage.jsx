@@ -55,13 +55,7 @@ const HomePage = () => {
       <header className="homepage-header">
         <div className="header-content">
           <div className="logo-section">
-            <div className="logo-icon">
-              <i className="fa-solid fa-compass"></i>
-            </div>
-            <div className="logo-text">
-              <h1>Coverage Compass</h1>
-              <p className="tagline">Navigate Your Benefits With Confidence</p>
-            </div>
+            <img src="/images/Cover_pic.png" alt="Coverage Compass" className="logo-image" />
           </div>
           <button className="btn-get-started" onClick={() => setShowLoginModal(true)}>
             Get Started <i className="fa-solid fa-arrow-right"></i>
@@ -163,10 +157,8 @@ const HomePage = () => {
       <footer className="homepage-footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <i className="fa-solid fa-compass"></i>
-            <span>Coverage Compass</span>
+            <img src="/images/Cover_pic.png" alt="Coverage Compass" className="footer-logo-image" />
           </div>
-          <p className="footer-tagline">Navigate Your Benefits With Confidence</p>
           <p className="footer-powered">Powered by AI | Built for Lincoln Financial Wellness</p>
         </div>
       </footer>
