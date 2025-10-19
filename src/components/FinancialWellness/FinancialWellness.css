@@ -2279,30 +2279,6 @@
   50% { transform: translateY(-5px); }
 }
 
-.maze-controls {
-  text-align: center;
-  margin-top: 20px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.maze-controls p {
-  color: #ffffff;
-  margin: 8px 0;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.maze-controls i {
-  color: #FF6B35;
-  font-size: 1.2rem;
-}
-
 /* Modal Overlay */
 .modal-overlay {
   position: fixed;
