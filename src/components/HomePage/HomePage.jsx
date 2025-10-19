@@ -7,8 +7,8 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleEmployeeLogin = () => {
-    // Navigate to the financial wellness page (Part 2)
-    navigate('/financial-wellness');
+    // TODO: Navigate to employee portal - destination TBD
+    setShowLoginModal(false);
   };
 
   const handleHRLogin = () => {
