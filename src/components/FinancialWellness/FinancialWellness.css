@@ -265,7 +265,9 @@
   align-items: center;
   justify-content: center;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  background: rgba(255, 215, 0, 0.15);
+  border: 3px solid rgba(255, 215, 0, 0.3);
+  filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.2));
 }
 
 .module-icon-img {
@@ -277,12 +279,16 @@
 
 .module-icon-fa {
   font-size: 3.5rem;
-  color: inherit;
+  color: #FFD700;
   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .module-card:hover .module-icon {
   transform: scale(1.15) rotate(10deg);
+  background: rgba(255, 215, 0, 0.25);
+  border-color: rgba(255, 215, 0, 0.6);
+  filter: drop-shadow(0 6px 12px rgba(255, 215, 0, 0.4));
 }
 
 .module-card:hover .module-icon-img {
@@ -297,21 +303,21 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #ffffff;
+  color: #FFD700;
   letter-spacing: -0.3px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .module-description {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 24px;
   line-height: 1.6;
   font-size: 1rem;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
 }
 
 .module-button {
   border: none;
+  background: linear-gradient(135deg, #C44E6A 0%, #A52A4A 100%);
   color: white;
   padding: 13px 32px;
   border-radius: 30px;
@@ -321,12 +327,15 @@
   font-size: 1.05rem;
   letter-spacing: 0.3px;
   text-transform: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(196, 78, 106, 0.4);
+  border: 2px solid rgba(255, 215, 0, 0.3);
 }
 
 .module-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(196, 78, 106, 0.6);
+  border-color: rgba(255, 215, 0, 0.6);
+  background: linear-gradient(135deg, #D4677E 0%, #B63A56 100%);
 }
 
 /* Info Section */
@@ -532,12 +541,13 @@
 .scenario-header h2,
 .budget-header h2 {
   font-size: 2rem;
-  color: #333;
+  color: #FFD700;
   margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .budget-subtitle {
-  color: #666;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.1rem;
 }
 
@@ -549,7 +559,7 @@
 
 .progress-text {
   font-size: 0.9rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 8px;
 }
 
@@ -580,28 +590,34 @@
 }
 
 .question-category {
-  background: #e3f2fd;
-  color: #1976d2;
+  background: rgba(255, 215, 0, 0.2);
+  color: #FFD700;
   padding: 5px 15px;
   border-radius: 15px;
   font-size: 0.85rem;
   font-weight: 600;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .question-points {
-  background: #fff3e0;
-  color: #f57c00;
+  background: rgba(255, 215, 0, 0.25);
+  color: #FFD700;
   padding: 5px 15px;
   border-radius: 15px;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .question-text {
   font-size: 1.3rem;
-  color: #333;
+  color: #FFD700;
   margin-bottom: 25px;
   line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
 }
 
 .answers-grid {
