@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
+import logoImage from '/images/Cover_pic.png';
 
 const HomePage = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -56,7 +57,7 @@ const HomePage = () => {
         <div className="header-content">
           <div className="logo-section">
             <a href="/" className="logo-link">
-              <img src="/images/Cover_pic.png" alt="Coverage Compass" className="logo-image" />
+              <img src={logoImage} alt="Coverage Compass" className="logo-image" />
             </a>
           </div>
           <button className="btn-get-started" onClick={() => setShowLoginModal(true)}>
