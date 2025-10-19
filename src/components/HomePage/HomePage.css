@@ -235,6 +235,93 @@
   margin: 0;
 }
 
+/* Financial Wellness Education CTA */
+.wellness-education-cta {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.wellness-cta-content {
+  background: linear-gradient(135deg, #8B1538 0%, #6b0f1a 100%);
+  padding: 40px 50px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 8px 30px rgba(139, 21, 56, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.wellness-cta-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(139, 21, 56, 0.4);
+}
+
+.wellness-cta-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 140, 66, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wellness-cta-icon i {
+  font-size: 40px;
+  color: #FF8C42;
+}
+
+.wellness-cta-text {
+  flex: 1;
+}
+
+.wellness-cta-text h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 10px 0;
+}
+
+.wellness-cta-text p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.btn-wellness-education {
+  background: linear-gradient(135deg, #FF8C42, #FF6B35);
+  color: white;
+  border: none;
+  padding: 16px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-wellness-education:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+}
+
+.btn-wellness-education i {
+  transition: transform 0.3s ease;
+}
+
+.btn-wellness-education:hover i {
+  transform: translateX(5px);
+}
+
 .services-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -622,6 +709,11 @@
 
   .login-options {
     grid-template-columns: 1fr;
+  }
+
+  .wellness-cta-content {
+    flex-direction: column;
+    text-align: center;
   }
 }
 

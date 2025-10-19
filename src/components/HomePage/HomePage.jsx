@@ -87,6 +87,28 @@ const HomePage = () => {
           <h2>Our Services</h2>
           <p>Comprehensive tools and resources for financial wellness</p>
         </div>
+        
+        {/* Financial Wellness Education CTA */}
+        <div className="wellness-education-cta">
+          <div className="wellness-cta-content">
+            <div className="wellness-cta-icon">
+              <i className="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div className="wellness-cta-text">
+              <h3>Financial Wellness Education</h3>
+              <p>Interactive learning platform to master your finances through games, scenarios, and real-world challenges</p>
+            </div>
+            <a 
+              href="https://mohnish-dev.github.io/financial-wellness-app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-wellness-education"
+            >
+              Start Learning <i className="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="service-card">
