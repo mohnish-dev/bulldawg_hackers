@@ -81,7 +81,7 @@ const FinancialWellness = () => {
         <h1 className="main-title">
           Get Smart About <span className="gradient-text">Your Money</span>
         </h1>
-        <p className="subtitle">Learn finance the fun way - no boring textbooks, we promise!</p>
+        <p className="subtitle">Learn finance the fun way, no boring textbooks, we promise!</p>
         
         <div className="stats-bar">
           <div className="stat-item stat-item-1">
