@@ -3,6 +3,7 @@ import './FinancialWellness.css';
 import QuizGame from './QuizGame';
 import ScenarioGame from './ScenarioGame';
 import BudgetSimulator from './BudgetSimulator';
+import MazeGame from './MazeGame';
 import ProgressTracker from './ProgressTracker';
 
 const FinancialWellness = () => {
@@ -38,6 +39,13 @@ const FinancialWellness = () => {
       icon: 'fa-solid fa-calculator',
       description: 'Time to build your first budget (or improve your current one!)',
       color: '#50C878'
+    },
+    {
+      id: 'maze',
+      title: 'Maze Navigator',
+      icon: 'fa-solid fa-map-location-dot',
+      description: 'Navigate life\'s financial maze from college to retirement!',
+      color: '#FF6B6B'
     }
   ];
 
@@ -169,6 +177,8 @@ const FinancialWellness = () => {
         return <ScenarioGame onComplete={updateProgress} onBack={() => setCurrentModule('home')} />;
       case 'budget':
         return <BudgetSimulator onComplete={updateProgress} onBack={() => setCurrentModule('home')} />;
+      case 'maze':
+        return <MazeGame onComplete={updateProgress} onBack={() => setCurrentModule('home')} />;
       default:
         return renderHome();
     }
