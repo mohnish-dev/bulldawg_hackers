@@ -84,7 +84,7 @@ const HomePage = () => {
           </div>
           <div className="hero-visual">
             <div className="floating-icon-hero">
-              <i className="fa-solid fa-piggy-bank"></i>
+              <i className="fa-solid fa-chart-line"></i>
             </div>
           </div>
         </div>
