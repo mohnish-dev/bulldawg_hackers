@@ -8,8 +8,8 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleEmployeeLogin = () => {
-    // TODO: Navigate to employee portal - destination TBD
-    setShowLoginModal(false);
+    // Redirect to employee portal
+    window.location.href = 'http://127.0.0.1:5000/';
   };
 
   const handleHRLogin = () => {
