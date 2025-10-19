@@ -26,7 +26,7 @@ const ProgressTracker = ({ progress }) => {
           <div className="recent-badges">
             {progress.badges.slice(-3).map((badge, index) => (
               <div key={index} className="badge-item" title={badge.date}>
-                <span className="badge-icon">{badge.icon}</span>
+                <span className="badge-icon"><i className={badge.icon}></i></span>
               </div>
             ))}
           </div>
