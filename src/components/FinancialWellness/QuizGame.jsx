@@ -7,8 +7,6 @@ const QuizGame = ({ onComplete, onBack }) => {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
-  const [showAnimation, setShowAnimation] = useState(false);
-  const [isCorrectAnimation, setIsCorrectAnimation] = useState(false);
 
   const question = quizQuestions[currentQuestion];
 
@@ -17,15 +15,6 @@ const QuizGame = ({ onComplete, onBack }) => {
     
     setSelectedAnswer(answerIndex);
     const isCorrect = answerIndex === question.correctAnswer;
-    
-    // Trigger animation
-    setIsCorrectAnimation(isCorrect);
-    setShowAnimation(true);
-    
-    // Hide animation after 2 seconds
-    setTimeout(() => {
-      setShowAnimation(false);
-    }, 2000);
     
     if (isCorrect) {
       setScore(score + question.points);
@@ -43,7 +32,6 @@ const QuizGame = ({ onComplete, onBack }) => {
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(null);
-      setShowAnimation(false);
     } else {
       setShowResult(true);
       onComplete('quiz', score);
@@ -140,44 +128,6 @@ const QuizGame = ({ onComplete, onBack }) => {
       </div>
 
       <div className="quiz-content">
-        {/* Animation Overlay */}
-        {showAnimation && (
-          <div className="animation-overlay">
-            {isCorrectAnimation ? (
-              <div className="correct-animation">
-                <div className="character-celebrating">
-                  <i className="fa-solid fa-user-ninja character-icon"></i>
-                  <i className="fa-solid fa-hammer hammer-icon hammer-smash"></i>
-                </div>
-                <div className="question-break">
-                  <i className="fa-solid fa-circle-question breaking-question"></i>
-                  <div className="shatter-particles">
-                    <span className="particle"></span>
-                    <span className="particle"></span>
-                    <span className="particle"></span>
-                    <span className="particle"></span>
-                    <span className="particle"></span>
-                  </div>
-                </div>
-                <div className="success-text">CRUSHED IT! 🎉</div>
-              </div>
-            ) : (
-              <div className="incorrect-animation">
-                <div className="character-sad">
-                  <i className="fa-solid fa-user-ninja character-icon character-disappointed"></i>
-                  <i className="fa-solid fa-hammer hammer-icon hammer-broken"></i>
-                </div>
-                <div className="hammer-pieces">
-                  <span className="piece"></span>
-                  <span className="piece"></span>
-                  <span className="piece"></span>
-                </div>
-                <div className="failure-text">Oops! Try again! 💪</div>
-              </div>
-            )}
-          </div>
-        )}
-        
         <div className="question-card">
           <div className="question-header">
             <span className="question-category">{question.category}</span>
