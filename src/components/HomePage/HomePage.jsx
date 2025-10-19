@@ -56,9 +56,9 @@ const HomePage = () => {
       <header className="homepage-header">
         <div className="header-content">
           <div className="logo-section">
-            <a href="/" className="logo-link">
+            <div className="logo-link" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
               <img src={logoImage} alt="Coverage Compass" className="logo-image" />
-            </a>
+            </div>
           </div>
           <button className="btn-get-started" onClick={() => setShowLoginModal(true)}>
             Get Started <i className="fa-solid fa-arrow-right"></i>
@@ -176,8 +176,8 @@ const HomePage = () => {
       {/* Footer */}
       <footer className="homepage-footer">
         <div className="footer-content">
-          <div className="footer-logo">
-            <img src="/images/Cover_pic.png" alt="Coverage Compass" className="footer-logo-image" />
+          <div className="footer-logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+            <img src={logoImage} alt="Coverage Compass" className="footer-logo-image" />
           </div>
           <p className="footer-powered">Powered by AI | Built for Lincoln Financial Wellness</p>
         </div>
