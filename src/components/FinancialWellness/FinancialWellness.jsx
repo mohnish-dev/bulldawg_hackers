@@ -20,7 +20,7 @@ const FinancialWellness = () => {
     {
       id: 'quiz',
       title: 'Financial IQ Challenge',
-      icon: 'https://cdn-icons-png.flaticon.com/512/3976/3976625.png',
+      icon: 'fa-solid fa-circle-question',
       description: 'Think you know money? Let\'s find out with some quick questions!',
       color: '#4A90E2',
       emoji: '🧠'
@@ -28,7 +28,7 @@ const FinancialWellness = () => {
     {
       id: 'scenario',
       title: 'Life Scenarios',
-      icon: 'https://cdn-icons-png.flaticon.com/512/3079/3079652.png',
+      icon: 'fa-solid fa-people-group',
       description: 'Real situations, real choices. What would you do?',
       color: '#7B68EE',
       emoji: '💭'
@@ -36,7 +36,7 @@ const FinancialWellness = () => {
     {
       id: 'budget',
       title: 'Budget Builder',
-      icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135706.png',
+      icon: 'fa-solid fa-calculator',
       description: 'Time to build your first budget (or improve your current one!)',
       color: '#50C878',
       emoji: '📝'
@@ -80,7 +80,7 @@ const FinancialWellness = () => {
   const renderHome = () => (
     <div className="wellness-home">
       <div className="hero-section">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Money" className="hero-float-img" />
+        <i className="fa-solid fa-piggy-bank hero-float-icon"></i>
         <h1 className="main-title">
           Get Smart About <span className="gradient-text">Your Money</span>
         </h1>
@@ -88,21 +88,21 @@ const FinancialWellness = () => {
         
         <div className="stats-bar">
           <div className="stat-item stat-item-1">
-            <img src="https://cdn-icons-png.flaticon.com/512/2583/2583839.png" alt="Trophy" className="stat-icon-img" />
+            <i className="fa-solid fa-star stat-icon-fa"></i>
             <div>
               <div className="stat-value">{userProgress.totalPoints}</div>
               <div className="stat-label">Points</div>
             </div>
           </div>
           <div className="stat-item stat-item-2">
-            <img src="https://cdn-icons-png.flaticon.com/512/3183/3183074.png" alt="Level" className="stat-icon-img" />
+            <i className="fa-solid fa-ranking-star stat-icon-fa"></i>
             <div>
               <div className="stat-value">Level {userProgress.level}</div>
               <div className="stat-label">Current Level</div>
             </div>
           </div>
           <div className="stat-item stat-item-3">
-            <img src="https://cdn-icons-png.flaticon.com/512/2583/2583815.png" alt="Badges" className="stat-icon-img" />
+            <i className="fa-solid fa-medal stat-icon-fa"></i>
             <div>
               <div className="stat-value">{userProgress.badges.length}</div>
               <div className="stat-label">Badges</div>
@@ -120,7 +120,7 @@ const FinancialWellness = () => {
             onClick={() => setCurrentModule(module.id)}
           >
             <div className="module-icon" style={{ backgroundColor: module.color + '20' }}>
-              <img src={module.icon} alt={module.title} className="module-icon-img" />
+              <i className={`${module.icon} module-icon-fa`}></i>
             </div>
             <h3 className="module-title">{module.title}</h3>
             <p className="module-description">{module.description}</p>
@@ -138,24 +138,24 @@ const FinancialWellness = () => {
         <h2>Why This Actually Matters 💭</h2>
         <div className="info-cards">
           <div className="info-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3045/3045659.png" alt="Balance" className="info-icon-img" />
+            <i className="fa-solid fa-list-check info-icon-fa"></i>
             <h3>Juggling Multiple Goals</h3>
             <p>Want to save for a car AND pay off loans AND build an emergency fund? Yeah, we get it. Let's figure out the balance together.</p>
           </div>
           <div className="info-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/4727/4727266.png" alt="Goals" className="info-icon-img" />
+            <i className="fa-solid fa-rocket info-icon-fa"></i>
             <h3>Set Goals That Stick</h3>
             <p>No more vague "I should save more" promises. We're talking real numbers, real deadlines, and real results.</p>
           </div>
           <div className="info-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3131/3131607.png" alt="Learning" className="info-icon-img" />
+            <i className="fa-solid fa-lightbulb info-icon-fa"></i>
             <h3>Learn the Stuff They Don't Teach</h3>
             <p>Insurance, investments, 401(k)s... all the "adult" stuff explained without the confusing jargon.</p>
           </div>
         </div>
         
         <div className="info-callout">
-          <img src="https://cdn-icons-png.flaticon.com/512/3588/3588456.png" alt="Stressed" className="callout-icon-img" />
+          <i className="fa-solid fa-chart-line callout-icon-fa"></i>
           <h3>Real Talk:</h3>
           <p>88% of people stress about money. That's... basically everyone. But here's the thing: <strong>financial stress is manageable</strong> when you know what you're doing. And that's exactly what we're here for.</p>
         </div>
