@@ -16,15 +16,15 @@ const BudgetSimulator = ({ onComplete, onBack }) => {
   const [showResults, setShowResults] = useState(false);
 
   const expenseCategories = [
-    { key: 'housing', label: 'Housing (Rent/Mortgage)', icon: '🏠', recommended: 30 },
-    { key: 'utilities', label: 'Utilities', icon: '💡', recommended: 5 },
-    { key: 'food', label: 'Food & Groceries', icon: '🍔', recommended: 15 },
-    { key: 'transportation', label: 'Transportation', icon: '🚗', recommended: 15 },
-    { key: 'insurance', label: 'Insurance', icon: '🛡️', recommended: 10 },
-    { key: 'healthcare', label: 'Healthcare', icon: '⚕️', recommended: 5 },
-    { key: 'savings', label: 'Savings & Investments', icon: '💰', recommended: 20 },
-    { key: 'entertainment', label: 'Entertainment', icon: '🎮', recommended: 5 },
-    { key: 'other', label: 'Other', icon: '📦', recommended: 5 }
+    { key: 'housing', label: 'Housing (Rent/Mortgage)', icon: 'fa-solid fa-house', recommended: 30 },
+    { key: 'utilities', label: 'Utilities', icon: 'fa-solid fa-bolt', recommended: 5 },
+    { key: 'food', label: 'Food & Groceries', icon: 'fa-solid fa-utensils', recommended: 15 },
+    { key: 'transportation', label: 'Transportation', icon: 'fa-solid fa-car', recommended: 15 },
+    { key: 'insurance', label: 'Insurance', icon: 'fa-solid fa-shield-halved', recommended: 10 },
+    { key: 'healthcare', label: 'Healthcare', icon: 'fa-solid fa-heart-pulse', recommended: 5 },
+    { key: 'savings', label: 'Savings & Investments', icon: 'fa-solid fa-piggy-bank', recommended: 20 },
+    { key: 'entertainment', label: 'Entertainment', icon: 'fa-solid fa-gamepad', recommended: 5 },
+    { key: 'other', label: 'Other', icon: 'fa-solid fa-box', recommended: 5 }
   ];
 
   const handleExpenseChange = (category, value) => {
@@ -81,10 +81,10 @@ const BudgetSimulator = ({ onComplete, onBack }) => {
   const getBudgetRating = () => {
     const { remaining, savingsPercentage } = calculateBudget();
     
-    if (remaining < 0) return { rating: 'needs-work', message: 'Budget needs adjustment', icon: '⚠️', color: '#E74C3C' };
-    if (savingsPercentage >= 20 && remaining > 0) return { rating: 'excellent', message: 'Excellent budget!', icon: '⭐', color: '#27AE60' };
-    if (savingsPercentage >= 10) return { rating: 'good', message: 'Good budget!', icon: '👍', color: '#3498DB' };
-    return { rating: 'okay', message: 'Decent budget', icon: '👌', color: '#F39C12' };
+    if (remaining < 0) return { rating: 'needs-work', message: 'Budget needs adjustment', icon: 'fa-solid fa-triangle-exclamation', color: '#E74C3C' };
+    if (savingsPercentage >= 20 && remaining > 0) return { rating: 'excellent', message: 'Excellent budget!', icon: 'fa-solid fa-star', color: '#27AE60' };
+    if (savingsPercentage >= 10) return { rating: 'good', message: 'Good budget!', icon: 'fa-solid fa-thumbs-up', color: '#3498DB' };
+    return { rating: 'okay', message: 'Decent budget', icon: 'fa-solid fa-circle-check', color: '#F39C12' };
   };
 
   const handleReset = () => {
@@ -105,28 +105,28 @@ const BudgetSimulator = ({ onComplete, onBack }) => {
       <div className="budget-container">
         <div className="budget-results">
           <div className="results-header">
-            <h2>Budget Analysis 💰</h2>
+            <h2>Budget Analysis</h2>
             <div className="rating-display" style={{ backgroundColor: rating.color + '20', borderColor: rating.color }}>
-              <span className="rating-icon">{rating.icon}</span>
+              <span className="rating-icon"><i className={rating.icon}></i></span>
               <span className="rating-text">{rating.message}</span>
             </div>
             <div className="points-earned">
-              <span className="points-icon">⭐</span>
+              <span className="points-icon"><i className="fa-solid fa-star"></i></span>
               <span>{points} Points Earned</span>
             </div>
           </div>
 
           <div className="budget-summary">
             <div className="summary-card income-card">
-              <h3>💵 Monthly Income</h3>
+              <h3>Monthly Income</h3>
               <div className="amount">${income.toFixed(2)}</div>
             </div>
             <div className="summary-card expense-card">
-              <h3>📊 Total Expenses</h3>
+              <h3>Total Expenses</h3>
               <div className="amount">${totalExpenses.toFixed(2)}</div>
             </div>
             <div className={`summary-card balance-card ${remaining >= 0 ? 'positive' : 'negative'}`}>
-              <h3>{remaining >= 0 ? '✅' : '⚠️'} Remaining</h3>
+              <h3>Remaining</h3>
               <div className="amount">${remaining.toFixed(2)}</div>
             </div>
           </div>
@@ -143,7 +143,7 @@ const BudgetSimulator = ({ onComplete, onBack }) => {
                 return (
                   <div key={cat.key} className="breakdown-item">
                     <div className="breakdown-label">
-                      <span className="category-icon">{cat.icon}</span>
+                      <span className="category-icon"><i className={cat.icon}></i></span>
                       <span className="category-name">{cat.label}</span>
                       <span className="category-amount">${amount.toFixed(2)}</span>
                     </div>
@@ -168,29 +168,29 @@ const BudgetSimulator = ({ onComplete, onBack }) => {
           </div>
 
           <div className="budget-insights">
-            <h3>💡 Insights & Tips</h3>
+            <h3>Insights & Tips</h3>
             <div className="insights-grid">
               {remaining < 0 && (
                 <div className="insight-card warning">
-                  <span className="insight-icon">⚠️</span>
+                  <span className="insight-icon"><i className="fa-solid fa-triangle-exclamation"></i></span>
                   <p><strong>Overspending:</strong> Your expenses exceed your income. Consider reducing non-essential spending.</p>
                 </div>
               )}
               {savingsPercentage < 10 && (
                 <div className="insight-card warning">
-                  <span className="insight-icon">💰</span>
+                  <span className="insight-icon"><i className="fa-solid fa-piggy-bank"></i></span>
                   <p><strong>Low Savings:</strong> Try to save at least 10-20% of your income for emergencies and future goals.</p>
                 </div>
               )}
               {savingsPercentage >= 20 && (
                 <div className="insight-card success">
-                  <span className="insight-icon">⭐</span>
+                  <span className="insight-icon"><i className="fa-solid fa-star"></i></span>
                   <p><strong>Great Savings!</strong> You're saving {savingsPercentage.toFixed(1)}% - excellent financial habit!</p>
                 </div>
               )}
               {parseFloat(expenses.insurance) / income * 100 < 5 && (
                 <div className="insight-card info">
-                  <span className="insight-icon">🛡️</span>
+                  <span className="insight-icon"><i className="fa-solid fa-shield-halved"></i></span>
                   <p><strong>Insurance:</strong> Consider adequate insurance coverage to protect against unexpected events.</p>
                 </div>
               )}
@@ -216,14 +216,14 @@ const BudgetSimulator = ({ onComplete, onBack }) => {
     <div className="budget-container">
       <div className="budget-header">
         <button className="back-button" onClick={onBack}>← Back</button>
-        <h2>Budget Builder 💰</h2>
+        <h2>Budget Builder</h2>
         <p className="budget-subtitle">Create your personalized monthly budget</p>
       </div>
 
       <div className="budget-form">
         <div className="income-section">
           <label className="form-label">
-            <span className="label-icon">💵</span>
+            <span className="label-icon"><i className="fa-solid fa-dollar-sign"></i></span>
             Monthly Income
           </label>
           <input

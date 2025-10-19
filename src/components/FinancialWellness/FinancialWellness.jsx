@@ -30,16 +30,14 @@ const FinancialWellness = () => {
       title: 'Life Scenarios',
       icon: 'fa-solid fa-people-group',
       description: 'Real situations, real choices. What would you do?',
-      color: '#7B68EE',
-      emoji: '💭'
+      color: '#7B68EE'
     },
     {
       id: 'budget',
       title: 'Budget Builder',
       icon: 'fa-solid fa-calculator',
       description: 'Time to build your first budget (or improve your current one!)',
-      color: '#50C878',
-      emoji: '📝'
+      color: '#50C878'
     }
   ];
 
@@ -68,7 +66,7 @@ const FinancialWellness = () => {
         newProgress.level = newLevel;
         newProgress.badges.push({
           name: `Level ${newLevel} Achiever`,
-          icon: '⭐',
+          icon: 'fa-solid fa-star',
           date: new Date().toLocaleDateString()
         });
       }
@@ -135,7 +133,7 @@ const FinancialWellness = () => {
       </div>
 
       <div className="info-section">
-        <h2>Why This Actually Matters 💭</h2>
+        <h2>Why This Actually Matters</h2>
         <div className="info-cards">
           <div className="info-card">
             <i className="fa-solid fa-list-check info-icon-fa"></i>

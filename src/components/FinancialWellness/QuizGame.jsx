@@ -53,7 +53,7 @@ const QuizGame = ({ onComplete, onBack }) => {
       <div className="quiz-container">
         <div className="quiz-result">
           <div className="result-header">
-            <h2>Quiz Complete! 🎉</h2>
+            <h2>You finished the quiz!</h2>
             <div className="result-score">
               <div className="score-circle">
                 <div className="score-text">
@@ -63,13 +63,13 @@ const QuizGame = ({ onComplete, onBack }) => {
               </div>
             </div>
             <p className="result-message">
-              {percentage >= 80 ? "Excellent! You're a financial wizard! 🌟" :
-               percentage >= 60 ? "Great job! Keep learning! 💪" :
-               "Good effort! Review the answers to improve. 📚"}
+              {percentage >= 80 ? "Excellent work! You really know your stuff." :
+               percentage >= 60 ? "Nice job! You're on the right track." :
+               "Good start! Review the explanations below to learn more."}
             </p>
             <div className="points-earned">
-              <span className="points-icon">⭐</span>
-              <span>{score} Points Earned</span>
+              <span className="points-icon">+</span>
+              <span>{score} Points</span>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ const QuizGame = ({ onComplete, onBack }) => {
     <div className="quiz-container">
       <div className="quiz-header">
         <button className="back-button" onClick={onBack}>← Back</button>
-        <h2>Financial IQ Challenge 🎯</h2>
+        <h2>Financial IQ Challenge</h2>
         <div className="quiz-progress">
           <div className="progress-text">
             Question {currentQuestion + 1} of {quizQuestions.length}
@@ -163,7 +163,7 @@ const QuizGame = ({ onComplete, onBack }) => {
 
           {selectedAnswer !== null && (
             <div className="explanation-box">
-              <h4>💡 Explanation</h4>
+              <h4><i className="fa-solid fa-lightbulb"></i> Explanation</h4>
               <p>{question.explanation}</p>
             </div>
           )}
