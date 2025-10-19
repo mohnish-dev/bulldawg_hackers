@@ -75,10 +75,10 @@
 
 .level-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #00B8D4, #00D9FF);
+  background: linear-gradient(90deg, #FF8C42, #FF6B35);
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
+  box-shadow: 0 0 8px rgba(255, 107, 53, 0.6);
 }
 
 .level-next {
@@ -265,9 +265,9 @@
   align-items: center;
   justify-content: center;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background: rgba(0, 217, 255, 0.15);
-  border: 3px solid rgba(0, 217, 255, 0.3);
-  filter: drop-shadow(0 4px 8px rgba(0, 217, 255, 0.2));
+  background: rgba(255, 107, 53, 0.15);
+  border: 3px solid rgba(255, 107, 53, 0.3);
+  filter: drop-shadow(0 4px 8px rgba(255, 107, 53, 0.2));
 }
 
 .module-icon-img {
@@ -279,16 +279,16 @@
 
 .module-icon-fa {
   font-size: 3.5rem;
-  color: #00D9FF;
+  color: #FF6B35;
   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .module-card:hover .module-icon {
   transform: scale(1.15) rotate(10deg);
-  background: rgba(0, 217, 255, 0.25);
-  border-color: rgba(0, 217, 255, 0.6);
-  filter: drop-shadow(0 6px 12px rgba(0, 217, 255, 0.4));
+  background: rgba(255, 107, 53, 0.25);
+  border-color: rgba(255, 107, 53, 0.6);
+  filter: drop-shadow(0 6px 12px rgba(255, 107, 53, 0.4));
 }
 
 .module-card:hover .module-icon-img {
@@ -303,7 +303,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #00D9FF;
+  color: #FF6B35;
   letter-spacing: -0.3px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -328,13 +328,13 @@
   letter-spacing: 0.3px;
   text-transform: none;
   box-shadow: 0 4px 12px rgba(196, 78, 106, 0.4);
-  border: 2px solid rgba(0, 217, 255, 0.3);
+  border: 2px solid rgba(255, 107, 53, 0.3);
 }
 
 .module-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(196, 78, 106, 0.6);
-  border-color: rgba(0, 217, 255, 0.6);
+  border-color: rgba(255, 107, 53, 0.6);
   background: linear-gradient(135deg, #D4677E 0%, #B63A56 100%);
 }
 
@@ -366,14 +366,14 @@
   text-align: left;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(107, 15, 26, 0.3);
-  border-left: 4px solid rgba(0, 217, 255, 0.5);
+  border-left: 4px solid rgba(255, 107, 53, 0.5);
   border: 1px solid rgba(107, 15, 26, 0.5);
 }
 
 .info-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(107, 15, 26, 0.5);
-  border-left-color: #00D9FF;
+  border-left-color: #FF6B35;
 }
 
 .info-icon {
@@ -394,7 +394,7 @@
 
 .info-icon-fa {
   font-size: 3.5rem;
-  color: #00D9FF;
+  color: #FF6B35;
   margin-bottom: 16px;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
   transition: transform 0.3s ease;
@@ -541,7 +541,7 @@
 .scenario-header h2,
 .budget-header h2 {
   font-size: 2rem;
-  color: #00D9FF;
+  color: #FF6B35;
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -590,30 +590,30 @@
 }
 
 .question-category {
-  background: rgba(0, 217, 255, 0.2);
-  color: #00D9FF;
+  background: rgba(255, 107, 53, 0.2);
+  color: #FF6B35;
   padding: 5px 15px;
   border-radius: 15px;
   font-size: 0.85rem;
   font-weight: 600;
-  border: 1px solid rgba(0, 217, 255, 0.4);
+  border: 1px solid rgba(255, 107, 53, 0.4);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .question-points {
-  background: rgba(0, 217, 255, 0.25);
-  color: #00D9FF;
+  background: rgba(255, 107, 53, 0.25);
+  color: #FF6B35;
   padding: 5px 15px;
   border-radius: 15px;
   font-size: 0.85rem;
   font-weight: 700;
-  border: 1px solid rgba(0, 217, 255, 0.5);
+  border: 1px solid rgba(255, 107, 53, 0.5);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .question-text {
   font-size: 1.3rem;
-  color: #00D9FF;
+  color: #FF6B35;
   margin-bottom: 25px;
   line-height: 1.5;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -1429,7 +1429,7 @@
 }
 
 .actual-bar.okay {
-  background: linear-gradient(90deg, #FF9800, #00E5FF);
+  background: linear-gradient(90deg, #FF9800, #FFA07A);
 }
 
 .actual-bar.high {
@@ -2074,7 +2074,7 @@
 
 .stat-box i {
   font-size: 2rem;
-  color: #00D9FF;
+  color: #FF6B35;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
@@ -2133,8 +2133,8 @@
 }
 
 .maze-path.visited {
-  background: linear-gradient(135deg, #00D9FF 0%, #00E5FF 100%);
-  box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+  background: linear-gradient(135deg, #FF6B35 0%, #FFA07A 100%);
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
   animation: pathGlow 0.5s ease;
 }
 
@@ -2151,8 +2151,8 @@
 }
 
 .maze-decision {
-  background: linear-gradient(135deg, #00D9FF 0%, #00E5FF 100%);
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+  background: linear-gradient(135deg, #FF6B35 0%, #FFA07A 100%);
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
   animation: decisionPulse 2s infinite;
 }
 
@@ -2162,8 +2162,8 @@
 }
 
 @keyframes decisionPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(0, 217, 255, 0.6); }
-  50% { box-shadow: 0 0 30px rgba(0, 217, 255, 0.9); }
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.6); }
+  50% { box-shadow: 0 0 30px rgba(255, 107, 53, 0.9); }
 }
 
 .maze-event {
@@ -2183,18 +2183,18 @@
 }
 
 .maze-goal {
-  background: linear-gradient(135deg, #00D9FF 0%, #00B8D4 100%);
-  box-shadow: 0 0 30px rgba(0, 217, 255, 0.9);
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.9);
   animation: goalShine 1.5s infinite;
 }
 
 @keyframes goalShine {
   0%, 100% { 
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.9);
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.9);
     transform: scale(1);
   }
   50% { 
-    box-shadow: 0 0 45px rgba(0, 217, 255, 1);
+    box-shadow: 0 0 45px rgba(255, 107, 53, 1);
     transform: scale(1.05);
   }
 }
@@ -2262,7 +2262,7 @@
 }
 
 .maze-controls i {
-  color: #00D9FF;
+  color: #FF6B35;
   font-size: 1.2rem;
 }
 
@@ -2443,7 +2443,7 @@
 
 .victory-animation {
   font-size: 6rem;
-  color: #00D9FF;
+  color: #FF6B35;
   margin-bottom: 20px;
   animation: trophySpin 1s ease;
 }
