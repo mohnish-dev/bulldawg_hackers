@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - part_2
+      - homepage
 
   workflow_dispatch:
 
