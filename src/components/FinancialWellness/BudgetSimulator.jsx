@@ -243,7 +243,7 @@ const BudgetSimulator = ({ onComplete, onBack }) => {
                 {expenseCategories.map(cat => (
                   <div key={cat.key} className="expense-input-group">
                     <label className="form-label">
-                      <span className="label-icon">{cat.icon}</span>
+                      <span className="label-icon"><i className={cat.icon}></i></span>
                       {cat.label}
                       <span className="recommended-tag">{cat.recommended}% recommended</span>
                     </label>

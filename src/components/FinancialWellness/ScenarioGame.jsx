@@ -7,6 +7,7 @@ const ScenarioGame = ({ onComplete, onBack }) => {
   const [totalPoints, setTotalPoints] = useState(0);
   const [completedScenarios, setCompletedScenarios] = useState([]);
   const [showSummary, setShowSummary] = useState(false);
+  const [showOutcome, setShowOutcome] = useState(false);
 
   const scenario = scenarios[currentScenario];
 
@@ -19,9 +20,9 @@ const ScenarioGame = ({ onComplete, onBack }) => {
 
     const choice = scenario.choices[selectedChoice];
     const points = choice.points;
-    const newTotal = totalPoints + points;
     
-    setTotalPoints(newTotal);
+    // Use functional update to ensure we get the latest state
+    setTotalPoints(prev => prev + points);
     setCompletedScenarios([...completedScenarios, {
       scenario: scenario.title,
       choice: choice.text,
@@ -29,23 +30,19 @@ const ScenarioGame = ({ onComplete, onBack }) => {
       points: points,
       rating: choice.rating
     }]);
-    
-    // If this is the last scenario, pass the correct total to onComplete
-    if (currentScenario === scenarios.length - 1) {
-      // We'll call onComplete when showing summary with the correct total
-    }
+    setShowOutcome(true);
   };
 
   const handleNext = () => {
     if (currentScenario < scenarios.length - 1) {
       setCurrentScenario(currentScenario + 1);
       setSelectedChoice(null);
+      setShowOutcome(false);
     } else {
-      setShowSummary(true);
-      // The totalPoints state has been updated in handleSubmit, but we need to wait for the state update
-      // So we recalculate the total from completedScenarios
+      // Calculate final total from completed scenarios
       const finalTotal = completedScenarios.reduce((sum, item) => sum + item.points, 0) + 
                          scenario.choices[selectedChoice].points;
+      setShowSummary(true);
       onComplete('scenario', finalTotal);
     }
   };
@@ -115,7 +112,6 @@ const ScenarioGame = ({ onComplete, onBack }) => {
     );
   }
 
-  const showOutcome = selectedChoice !== null;
   const selectedChoiceData = showOutcome ? scenario.choices[selectedChoice] : null;
 
   return (
