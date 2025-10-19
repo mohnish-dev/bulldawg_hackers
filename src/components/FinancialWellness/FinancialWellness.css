@@ -486,6 +486,8 @@
   padding: 30px;
   min-height: 80vh;
   animation: fadeIn 0.5s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Header Styles */
@@ -1715,17 +1717,18 @@
    ============================================ */
 
 .animation-overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: transparent;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease;
+  z-index: 100;
+  pointer-events: none;
+  padding-top: 100px;
 }
 
 /* CORRECT ANSWER ANIMATION */
@@ -1749,12 +1752,35 @@
   color: #10b981;
   animation: characterJump 0.6s ease-in-out;
   filter: drop-shadow(0 10px 20px rgba(16, 185, 129, 0.5));
+  background: linear-gradient(135deg, #10b981, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.character-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse 0.6s ease-in-out infinite;
 }
 
 .hammer-icon {
   font-size: 4rem;
   position: absolute;
-  color: #fbbf24;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 5px 15px rgba(251, 191, 36, 0.6));
 }
 
 .hammer-smash {
@@ -1782,11 +1808,12 @@
 
 .particle {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #6366f1;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   border-radius: 50%;
   animation: particleExplode 1s ease-out forwards;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
 }
 
 .particle:nth-child(1) { animation-delay: 0.3s; }
@@ -1796,11 +1823,15 @@
 .particle:nth-child(5) { animation-delay: 0.5s; }
 
 .success-text {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 900;
-  color: #10b981;
-  text-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+  background: linear-gradient(135deg, #10b981, #34d399, #6ee7b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
   animation: textPop 0.5s ease-out 0.8s both;
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.6));
 }
 
 /* INCORRECT ANSWER ANIMATION */
@@ -1824,6 +1855,24 @@
   color: #ef4444;
   animation: characterShake 0.6s ease-in-out;
   filter: drop-shadow(0 10px 20px rgba(239, 68, 68, 0.5));
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.character-disappointed::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .hammer-broken {
@@ -1840,11 +1889,12 @@
 
 .piece {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background: #fbbf24;
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
   border-radius: 4px;
   animation: pieceFall 1s ease-out forwards;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.6);
 }
 
 .piece:nth-child(1) {
@@ -1863,11 +1913,15 @@
 }
 
 .failure-text {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #ef4444;
-  text-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+  background: linear-gradient(135deg, #ef4444, #f87171, #fca5a5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
   animation: textPop 0.5s ease-out 0.6s both;
+  filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6));
 }
 
 /* KEYFRAME ANIMATIONS */
@@ -1933,5 +1987,10 @@
   0% { transform: scale(0); opacity: 0; }
   50% { transform: scale(1.2); }
   100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
 }
 
