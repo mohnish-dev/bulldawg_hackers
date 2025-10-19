@@ -76,11 +76,6 @@ const HomePage = () => {
               Start Your Journey <i className="fa-solid fa-rocket"></i>
             </button>
           </div>
-          <div className="hero-visual">
-            <div className="floating-icon-hero">
-              <i className="fa-solid fa-chart-line"></i>
-            </div>
-          </div>
         </div>
       </section>
 

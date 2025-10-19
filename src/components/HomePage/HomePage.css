@@ -118,12 +118,16 @@
 .hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
+}
+
+.hero-text {
+  text-align: center;
+  max-width: 800px;
 }
 
 .hero-title {
