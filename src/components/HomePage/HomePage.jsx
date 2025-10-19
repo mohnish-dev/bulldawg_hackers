@@ -7,6 +7,12 @@ const HomePage = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const navigate = useNavigate();
 
+  const handleLogoClick = () => {
+    // Navigate to homepage and reload
+    navigate('/');
+    window.location.reload();
+  };
+
   const handleEmployeeLogin = () => {
     // Redirect to employee portal in new tab
     window.open('http://127.0.0.1:5000/', '_blank');
@@ -56,7 +62,7 @@ const HomePage = () => {
       <header className="homepage-header">
         <div className="header-content">
           <div className="logo-section">
-            <div className="logo-link" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+            <div className="logo-link" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
               <img src={logoImage} alt="Coverage Compass" className="logo-image" />
             </div>
           </div>
@@ -176,7 +182,7 @@ const HomePage = () => {
       {/* Footer */}
       <footer className="homepage-footer">
         <div className="footer-content">
-          <div className="footer-logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          <div className="footer-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <img src={logoImage} alt="Coverage Compass" className="footer-logo-image" />
           </div>
           <p className="footer-powered">Powered by AI | Built for Lincoln Financial Wellness</p>
